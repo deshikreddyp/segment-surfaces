@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "segmentsurfaces"
+version = "0.1.0"
+description = "Tools for creating and marking BREP geometry boundaries from meshes"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy",
+    "gmsh",
+    "tqdm"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.scripts]
+stl2brep = "segmentsurfaces.stl2brep:main"
+segment-surfaces = "segmentsurfaces.mark_boundaries:main"
+view-surfaces = "segmentsurfaces.view_surfaces:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
